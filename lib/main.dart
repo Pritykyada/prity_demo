@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
 
       builder: (context, child) => MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routerConfig: router,
         title: 'Product Browser',
         theme: ThemeData(

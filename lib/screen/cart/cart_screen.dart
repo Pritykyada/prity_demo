@@ -84,7 +84,10 @@ class CartScreen extends StatelessWidget {
                         ),
                         Text(
                           '\$${provider.cartTotal.toStringAsFixed(2)}',
-                          style: CommonTextStyle.f18pxBoldG
+
+                          style: CommonTextStyle.f18pxBoldG,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis
                         ),
                       ],
                     ),
@@ -194,12 +197,17 @@ class CartItemWidget extends StatelessWidget {
                         icon: const Icon(Icons.add_circle_outline),
                         color: Colors.green,
                       ),
-                      const Spacer(),
-                      Text(
-                        '\$${cartItem.totalPrice.toStringAsFixed(2)}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                      // const Spacer(),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Text(
+                            '\$${cartItem.totalPrice.toStringAsFixed(2)}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
                         ),
                       ),
                     ],
